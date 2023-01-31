@@ -1,0 +1,82 @@
+﻿@model PJGPlantasMVC.Models.Compra
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Compra</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Boleto.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Boleto.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cartao.NomeTitular)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cartao.NomeTitular)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pix.Cnpj)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pix.Cnpj)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Usuario.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Usuario.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cpf)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cpf)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rg)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rg)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Endereco)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Endereco)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Complemento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Complemento)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,84 @@
+﻿@model IEnumerable<PJGPlantasMVC.Models.Compra>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@using (Html.BeginForm())
+{
+    <div style="display:flex;flex-direction:row;margin-bottom:20px;">
+        <div style="font-family:'Times New Roman', Times, serif;font-size:17pt"> Find by name:</div>
+        <div style="margin-left:15px;margin-top:5px;"> @Html.TextBox("SearchString") </div>
+        <input type="submit" value="Search" class="btn btn-primary" style="margin-left:15px;height:35px;width:100px;" />
+    </div>
+}
+<table style="margin-top:5px;border:1px solid gray" class="table table-bordered text-left ">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Boleto.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cartao.NomeTitular)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pix.Cnpj)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Usuario.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cpf)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rg)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Endereco)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Complemento)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Boleto.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cartao.NomeTitular)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pix.Cnpj)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Usuario.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cpf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Endereco)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Complemento)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }, htmlAttributes: new { @class = "btn btn-primary" }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }, htmlAttributes: new { @class = "btn btn-info" }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id }, htmlAttributes: new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>
